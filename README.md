@@ -20,18 +20,18 @@ url：
 - 描述：图片地址。例如：
     - '../img/logo.png'
     - 'http://www.apicloud.com/img/mobile/wx_logo.jpg'
-    - '/storage/emulated/0/UZMap/...')
+    - '/storage/emulated/0/UZMap/...'
 
 side：
 
 - 类型：JSON 对象
 - 默认值：无
-- 描述：（可选项）如果图片为正方形时，将判断是否符合指定长度。不传则不判断
+- 描述：（可选项）如果图片为正方形时，将判断是否符合指定高度。不传则不判断
 - 内部字段：
 ```javascript
 {
-    min: 100,  // 数字类型。单位：px像素。图片最小长度，不传则不判断
-    max: 800   // 数字类型。单位：px像素。图片最大长度，不传则不判断
+    min: 100,  // 数字类型。单位：px像素。图片最小高度，不传则不判断
+    max: 800   // 数字类型。单位：px像素。图片最大高度，不传则不判断
 }
 ```
 
@@ -45,7 +45,9 @@ ret：
 ```javascript
 {
     status: true,  // 布尔类型
-    code: "",      // 数字类型，如果status为true,则不返回此字段
+    height: "",    // 数字类型。图片的真实高度
+    width: "",     // 数字类型。图片的真实宽度
+    code: "",      // 数字类型。如果status为true,则不返回此字段
                      //错误码：
                      // 2(缺少url参数)
                      // 3(图片不是正方形)
