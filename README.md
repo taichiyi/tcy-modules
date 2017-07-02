@@ -1,6 +1,7 @@
 # tcy-modules
 
 均支持AMD
+
 源码都在 `src` 文件夹里
 
 [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。")
