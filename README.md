@@ -12,7 +12,6 @@
 
 checkImgSquare({params}, callback(ret))
 
-
 ### params
 
 url：
@@ -78,6 +77,74 @@ checkImgSquare({
     console.log(JSON.stringify(ret));
 });
 
+
+```
+
+
+## UIMediaScanner
+
+在原来的基础上，做的处理，如果是ios则会调用transPath方法。
+
+UIMediaScanner({params}, callback(ret))
+
+### params
+
+默认参数
+
+```javascript
+{
+    type: 'picture',
+    column: 4,
+    classify: true,
+    max: 8,
+    sort: {
+        key: 'time',
+        order: 'desc'
+    },
+    texts: {
+        stateText: '已选择*项',
+        cancelText: '取消',
+        finishText: '完成'
+    },
+    styles: {
+        bg: '#fff',
+        mark: {
+            icon: '',
+            position: 'bottom_right',
+            size: 26
+        },
+        nav: {
+            bg: '#f7f8f9',
+            stateColor: '#333',
+            stateSize: 17,
+            cancelBg: 'rgba(0,0,0,0)',
+            cancelColor: '#007aff',
+            cancelSize: 16,
+            finishBg: 'rgba(0,0,0,0)',
+            finishColor: '#007aff',
+            finishSize: 16
+        }
+    },
+    scrollToBottom: {
+        intervalTime: -1,
+        anim: true
+    },
+    exchange: true,
+}
+```
+
+### callback(ret)
+
+参照文档：[http://docs.apicloud.com/Client-API/UI-Layout/UIMediaScanner#open](http://docs.apicloud.com/Client-API/UI-Layout/UIMediaScanner#open)  
+
+## 实例
+
+```javascript
+UIMediaScanner({
+    max: 6,
+}, function(ret) {
+    console.log(JSON.stringify(ret));
+});
 
 ```
 
