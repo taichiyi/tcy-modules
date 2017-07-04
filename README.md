@@ -85,7 +85,7 @@ checkImgSquare({
 
 ## UIMediaScanner
 
-选取多张图片。在原来的基础上，做的处理，如果是ios则会调用transPath方法。
+选取多张图片。在原来的基础上，做了处理，如果是ios则会调用transPath方法。
 
 依赖模块：`UIMediaScanner`
 
@@ -212,7 +212,58 @@ navMap({
 }, function(ret) {
     console.log(JSON.stringify(ret));
 })
+```
 
+## appInstalled
 
+判断是否已安装某个app
+
+依赖模块：`无`
+
+注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
+appInstalled({params}, callback(ret))
+
+### params
+
+ios：
+
+- 类型：字符串
+- 默认值：无
+- 描述：苹果包名。例如高德地图：'iosamap://'
+
+android：
+
+- 类型：JSON 对象
+- 默认值：无
+- 描述：安卓包名。例如高德地图：'com.autonavi.minimap'
+
+### callback(ret)
+
+ret：
+
+- 类型：JSON 对象
+- 描述：回调
+- 内部字段：
+```javascript
+{
+    installed: true,  // 布尔类型。true为安装，false为未安装
+}
+```
+
+## 实例
+
+```javascript
+// 判断是否已安装高德地图
+appInstalled({
+    ios: 'iosamap://',
+    android: 'com.autonavi.minimap'
+}, function(ret) {
+    if (ret.installed) {
+        // 已安装
+    } else {
+        // 未安装
+    }
+});
 ```
 
