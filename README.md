@@ -4,7 +4,7 @@
 
 源码都在 `src` 文件夹里
 
-[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。")
+[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") 
 
 ## check-img-square
 
@@ -83,7 +83,9 @@ checkImgSquare({
 
 ## UIMediaScanner
 
-在原来的基础上，做的处理，如果是ios则会调用transPath方法。
+选取多张图片。在原来的基础上，做的处理，如果是ios则会调用transPath方法。
+
+依赖模块：`UIMediaScanner`
 
 UIMediaScanner({params}, callback(ret))
 
