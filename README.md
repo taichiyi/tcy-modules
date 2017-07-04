@@ -4,7 +4,7 @@
 
 源码都在 `src` 文件夹里
 
-[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") 
+[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") 
 
 ## check-img-square
 
