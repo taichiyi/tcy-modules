@@ -10,6 +10,8 @@
 
 判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。
 
+依赖模块：`无`
+
 checkImgSquare({params}, callback(ret))
 
 ### params
@@ -147,6 +149,70 @@ UIMediaScanner({
 }, function(ret) {
     console.log(JSON.stringify(ret));
 });
+
+```
+
+
+## navMap
+
+打开高德或百度地图导航。
+
+依赖模块：`无`
+
+navMap({params}, callback(ret))
+
+### params
+
+appName：
+
+- 类型：字符串
+- 默认值：高德地图
+- 描述：想要打开的地图。'高德地图' || '百度地图'
+
+destinationLat：
+
+- 类型：JSON 对象
+- 默认值：无
+- 描述：目的地的纬度
+
+
+destinationLon
+
+- 类型：JSON 对象
+- 默认值：无
+- 描述：目的地的经度
+
+### callback(ret)
+
+ret：
+
+- 类型：JSON 对象
+- 描述：回调
+- 内部字段：
+```javascript
+{
+    status: true,  // 布尔类型
+    height: "",    // 数字类型。图片的真实高度
+    width: "",     // 数字类型。图片的真实宽度
+    code: "",      // 数字类型。如果status为true,则不返回此字段
+                     //错误码：
+                     // 3(未安装高德地图)
+                     // 4(未安装百度地图)
+                     // 5(两个地图都没安装)
+}
+```
+
+## 实例
+
+```javascript
+navMap({
+    appName: '高德地图',
+    destinationLat: 35.79788697849975,
+    destinationLon: 114.56164458447934
+}, function(ret) {
+    console.log(JSON.stringify(ret));
+})
+
 
 ```
 
