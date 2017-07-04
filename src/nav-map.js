@@ -24,6 +24,15 @@
         }
     }
 
+    // 判断是否已安装某个app
+    function appInstalled(params, callback) {
+        api.appInstalled({
+            appBundle: api.systemType === 'ios' ? params.ios : params.android,
+        }, function(ret, err) {
+            callback(ret, err);
+        });
+    }
+
     // 打开APP导航
     var navMap = function(params, callback) {
         if (callback === undefined) callback = params;

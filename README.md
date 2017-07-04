@@ -159,6 +159,8 @@ UIMediaScanner({
 
 依赖模块：`无`
 
+注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
 navMap({params}, callback(ret))
 
 ### params
