@@ -4,7 +4,7 @@
 
 源码都在 `src` 文件夹里
 
-[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") 
+[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
 
 ## check-img-square
 
@@ -269,3 +269,85 @@ appInstalled({
 });
 ```
 
+## UIActionSelector
+
+三级选择器
+
+依赖模块：`UIActionSelector`
+
+UIActionSelector({params}, callback(ret))
+
+### params
+
+默认参数
+
+```javascript
+{
+    datas: [],
+    animation: true,
+    fixedOn: api.frameName,
+    actives: [0, 0, 0],
+    layout: {
+        row: 7,
+        col: 3,
+        height: 30,
+        size: 12, // ios为：16
+        sizeActive: 14, // ios为：18
+        rowSpacing: 4,
+        colSpacing: 0,
+        maskBg: 'rgba(0,0,0,0.2)',
+        bg: '#fff',
+        color: '#aaa', // ios为：'#222'
+        colorSelected: '#3a3a3a' // ios为：'#000'
+    },
+    cancel: {
+        text: '取消',
+        size: 14,
+        w: 54, // ios为：50
+        h: 38, // ios为：42
+        bg: 'rgba(0,0,0,0.0)',
+        bgActive: 'rgba(0,0,0,0.0)',
+        color: 'rgb(8, 148, 236)',
+        colorActive: 'rgba(8, 148, 236, 0.5)'
+    },
+    ok: {
+        text: '完成',
+        size: 14,
+        w: 54, // ios为：50
+        h: 38, // ios为：42
+        bg: 'rgba(0,0,0,0.0)',
+        bgActive: 'rgba(0,0,0,0.0)',
+        color: 'rgb(8, 148, 236)',
+        colorActive: 'rgba(8, 148, 236, 0.5)'
+    },
+    title: {
+        text: '请选择',
+        size: 16,
+        h: 38, // ios为：42
+        bg: '#eee',
+        color: '#666'
+    },
+}
+```
+
+### callback(ret)
+
+参照文档：[http://docs.apicloud.com/Client-API/UI-Layout/UIActionSelector#1](http://docs.apicloud.com/Client-API/UI-Layout/UIActionSelector#1)  
+
+## 实例
+
+```javascript
+UIActionSelector({
+    datas: 'widget://res/city_data.json',
+    title: {
+        text: '',
+    },
+}, function(ret, err) {
+    if (ret) {
+        alert(JSON.stringify(ret));
+    } else {
+        alert(JSON.stringify(err));
+    }
+});
+
+```
