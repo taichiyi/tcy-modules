@@ -4,13 +4,75 @@
 
 源码都在 `src` 文件夹里
 
-[check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+[scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+
+## scrollToBottom
+
+判断是否已滑动到底部。可自定义判定距离。实时返回已滑动距离。
+
+依赖模块：`无`
+
+纯JavaScript：`是`
+
+文档最后更新时间：2017-07-25
+
+scrollToBottom({params}, callback(ret))
+
+### params
+
+selector：
+
+- 类型：字符串 | 元素
+- 默认值：无
+- 描述：
+    - 'body' 
+    - '#main'
+    - '.main'
+
+distance：
+
+- 类型：数字类型
+- 默认值：0
+- 描述：（可选项）距离底部的触发距离
+
+### callback(ret)
+
+ret：
+
+- 类型：JSON 对象
+- 描述：回调
+- 内部字段：
+```javascript
+{
+    status: true,  // 布尔类型，是否已到底部
+    scrollTop: '', // 数字类型。
+}
+```
+
+## 实例
+
+```javascript
+scrollToBottom({
+    selector: 'body',
+    distance: 0
+}, function(ret, err) {
+    console.log(JSON.stringify(ret));
+    if (ret.status) {
+        console.log('已到底部');
+    }
+});
+```
+
 
 ## check-img-square
 
 判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。
 
 依赖模块：`无`
+
+纯JavaScript：`是`
+
+文档最后更新时间：2017-07-25
 
 checkImgSquare({params}, callback(ret))
 
@@ -89,6 +151,10 @@ checkImgSquare({
 
 依赖模块：`UIMediaScanner`
 
+纯JavaScript：`否`
+
+文档最后更新时间：2017-07-25
+
 UIMediaScanner({params}, callback(ret))
 
 ### params
@@ -159,7 +225,11 @@ UIMediaScanner({
 
 依赖模块：`无`
 
+纯JavaScript：`否`
+
 注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
+文档最后更新时间：2017-07-25
 
 navMap({params}, callback(ret))
 
@@ -222,7 +292,11 @@ navMap({
 
 依赖模块：`无`
 
+纯JavaScript：`否`
+
 注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
+文档最后更新时间：2017-07-25
 
 appInstalled({params}, callback(ret))
 
@@ -274,6 +348,10 @@ appInstalled({
 三级选择器
 
 依赖模块：`UIActionSelector`
+
+纯JavaScript：`否`
+
+文档最后更新时间：2017-07-25
 
 UIActionSelector({params}, callback(ret))
 
