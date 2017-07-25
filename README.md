@@ -45,7 +45,7 @@ ret：
 ```javascript
 {
     status: true,  // 布尔类型，是否已到底部
-    scrollTop: '', // 数字类型。
+    scrollTop: '', // 数字类型。已滑动距离
 }
 ```
 
@@ -264,8 +264,6 @@ ret：
 ```javascript
 {
     status: true,  // 布尔类型
-    height: "",    // 数字类型。图片的真实高度
-    width: "",     // 数字类型。图片的真实宽度
     code: "",      // 数字类型。如果status为true,则不返回此字段
                      //错误码：
                      // 3(未安装高德地图)
