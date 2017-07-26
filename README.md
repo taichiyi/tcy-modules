@@ -10,11 +10,13 @@
 
 判断是否已滑动到底部。可自定义判定距离。实时返回已滑动距离。
 
+注：在ios下，滚动时无法实时触发回调，只有在滚动停止时才会触发回调。如果想实时触发回调，在api.openWin时把WKWebView属性设置为true。
+
 依赖模块：`无`
 
 纯JavaScript：`是`
 
-文档最后更新时间：2017-07-25
+文档最后更新时间：2017-07-26
 
 scrollToBottom({params}, callback(ret))
 
@@ -223,13 +225,13 @@ UIMediaScanner({
 
 打开高德或百度地图导航。
 
+注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
 依赖模块：`无`
 
 纯JavaScript：`否`
 
-注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
-
-文档最后更新时间：2017-07-25
+文档最后更新时间：2017-07-26
 
 navMap({params}, callback(ret))
 
@@ -288,13 +290,13 @@ navMap({
 
 判断是否已安装某个app
 
+注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
+
 依赖模块：`无`
 
 纯JavaScript：`否`
 
-注意：iOS9中系统对检测应用是否安装的方法做了限制，若想得到期望的结果，需要在config.xml里面配置可被检测的URL Scheme。（例如：'<preference name="querySchemes" value="weixin,sinaweibo,iosamap,baidumap,mqq" />'）
-
-文档最后更新时间：2017-07-25
+文档最后更新时间：2017-07-26
 
 appInstalled({params}, callback(ret))
 
