@@ -4,7 +4,66 @@
 
 [源码链接](./src)
 
-[scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+[bankCardInfo](#bankCardInfo "根据银行卡号返回银行名称和卡类型") [scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+
+## bankCardInfo
+
+根据银行卡号返回银行名称和卡类型
+
+依赖模块：`无`
+
+纯JavaScript：`是`
+
+文档最后更新时间：2017-09-01
+
+bankCardInfo(cardNo, callback(ret, err))
+
+### cardNo
+
+- 类型：字符串 
+- 默认值：无
+- 描述：银行卡号
+
+### callback(ret, err)
+
+ret：
+
+- 类型：JSON 对象
+- 内部字段：
+```javascript
+{
+    status: true,      // 布尔类型，是否识别出
+    bankName: '',      // 字符串，银行名称，例如：'工商银行'
+    bankCode: '',      // 字符串，银行代号，例如：'ICBC'
+    cardType: '',      // 字符串，银行卡类型(DC: "储蓄卡",CC: "信用卡",SCC: "准贷记卡",PC: "预付费卡")
+    cardTypeName: '',  // 字符串，银行卡类型名称
+    cardNo: '',        // 字符串，银行卡号
+}
+```
+
+err：
+
+- 类型：JSON 对象
+- 内部字段：
+```javascript
+{
+    code: ,      // 数字类型，错误码：
+                    // 6 （银行卡位数必须是15到19位）
+                    // 9 （银行卡号必须是数字）
+                    // 13（银行卡号识别失败）
+}
+```
+
+## 实例
+
+```javascript
+bankCardInfo('6227003320240034988', function(ret, err) {
+    console.log(JSON.stringify(ret));
+    console.log(JSON.stringify(err));
+});
+
+```
+
 
 ## scrollToBottom
 
