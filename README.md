@@ -4,7 +4,7 @@
 
 [源码链接](./src)
 
-[bankCardInfo](#bankCardInfo "根据银行卡号返回银行名称和卡类型") [scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+[bankCardInfo](#bankcardinfo "根据银行卡号返回银行名称和卡类型") [scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
 
 ## bankCardInfo
 
