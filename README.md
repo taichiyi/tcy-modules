@@ -4,7 +4,63 @@
 
 [源码链接](./src)
 
-[bankCardInfo](#bankcardinfo "根据银行卡号返回银行名称和卡类型") [scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+[emojioneTCY](#emojionetcy "Emoji表情和"简称"互转") [bankCardInfo](#bankcardinfo "根据银行卡号返回银行名称和卡类型") [scrollToBottom](#scrolltobottom "判断是否已滑动到底部") [check-img-square](#check-img-square "判断图片是否为正方形，并返回图片的一些信息(实际宽、高)。") [UIMediaScanner](#uimediascanner "选取多张图片。") [navMap](#navmap "打开高德或百度地图导航。") [appInstalled](#appinstalled "判断是否已安装某个app") [UIActionSelector](#uiactionselector "三级选择器") 
+
+## emojioneTCY
+
+Emoji表情和"简称"互转
+
+依赖模块：`无`
+
+纯JavaScript：`是`
+
+文档最后更新时间：2017-09-11
+
+### toShort(Str) ⇒ return
+
+把Emoji表情转为"简称"
+
+### Str
+
+- 类型：字符串 
+- 默认值：无
+- 描述：含有Emoji表情的字符串
+
+### return
+
+- 类型：字符串 
+- 描述：转化后的文本
+
+## 实例
+
+```javascript
+var str_test = '手势👌收到';
+console.log(emojioneTCY.toShort(str_test)); // '手势:ok_hand:收到'
+
+```
+### shortnameToUnicode(Str) ⇒ return
+
+把"简称"转为Emoji表情
+
+### Str
+
+- 类型：字符串 
+- 默认值：无
+- 描述：含有"简称"的字符串
+
+### return
+
+- 类型：字符串 
+- 描述：转化后的文本
+
+## 实例
+
+```javascript
+var str_test = '手势:ok_hand:收到';
+console.log(emojioneTCY.shortnameToUnicode(str_test)); // '手势👌收到'
+
+```
+
 
 ## bankCardInfo
 
